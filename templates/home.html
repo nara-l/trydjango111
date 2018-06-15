@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block head_title%} Welcome {{ 'home' |capfirst }} ||  {{block.super}} {% endblock head_title%}
+{% block content %}
+
+
+<p> Default hello world {{ body }}</p>
+
+{{ block.super }}
+{% endblock content %}
