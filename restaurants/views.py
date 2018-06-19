@@ -1,24 +1,16 @@
 from django.shortcuts import render
+from django.views.generic.base import TemplateView
 
 
 # Create your views here.
 
 # function based view
 
-def home(request):
+class HomeView(TemplateView):
     template_name = 'home.html'
 
-    return render(request, template_name, {'body': "home page body content here"})
+    def get_context_data(self, *args, **kwargs):
+        context = super(HomeView, self).get_context_data(**kwargs)
+        context['body'] = "Body content for home"
+        return context
 
-
-def about(request):
-    template_name = 'about.html'
-
-    return render(request, template_name, {'body': "about us body content here"})
-
-
-def contact(request):
-    template_name = 'contact.html'
-
-    return render(request, template_name, {'body': "Contact us body content"
-                                                   " here"})

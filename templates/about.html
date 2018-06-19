@@ -3,4 +3,6 @@
 {% block head_title%} About ||  {{block.super}} {% endblock head_title%}
 {% block content %}
 <p> Default hello world {{ body }}</p>
+{% include 'partials/sidebar.html' %}
+
 {% endblock content %}
