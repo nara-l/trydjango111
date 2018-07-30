@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
  <title>{% block head_title%} Restaurants | {{ block.super }} {% endblock head_title%}</title>
-{% block content%}
+{% block content %}
 <h1>Restaurant List</h1>
-<ul>
- {% for object in queryset %}
- <li>{{ object }}</li>
+
+ {% for obj in queryset %}
+ <li>{{ obj.name }} | {{obj.category}}  | {{obj.timestamp}}</li>
  {% endfor %}
 
-</ul>
-{% endblock content%}
+
+{% endblock content %}
